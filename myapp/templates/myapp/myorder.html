@@ -1,0 +1,40 @@
+{%extends 'myapp/header.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body >
+	<center>
+		<h1>TOTAL ITEMS PURCHASED :{{carts.count}}</h1>
+	</center>
+	
+		<div classs="row">
+		{% for s in carts %}
+		<div id="box" class="col-sm-4">
+			<div class="container">
+				<div class="card" style="width:250px">
+					<img class="card-img-top" src="{{s.phone.image.url}}" alt="card image" width=250px height=250px>
+					<div class="card-body">
+						<h4 class="card-title"> <b>MODEL</b> :{{s.phone.model}}</h4>
+						<p class="card-text"><b> PRICE </b>:{{s.phone.price}}</p>
+						<p class="card-text"><b> DATE </b>:{{s.buy_data}}</p>
+						
+						
+						<br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		{% endfor %}
+	</div>
+
+	
+
+	{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+{%extends 'myapp/header.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+{% block content %}
+<html>
+<head>
+	
+	<link href="{% static 'myapp/css/styles.css' %}" rel="stylesheet">
+	
+	
+</head>
+<body>
+	
+    <div class="stage">
+	<h2 >Mobile On Demand</h2>
+	<p><small><b><i>“With our phones acting as supercomputers in our pockets, we can find, learn, do, and buy whenever the need arises—or the whim strikes.”</i></b></a>.</small></p>
+
+	<div id="SLDR-ONE" class="sldr">
+		<ul class="wrp animate">
+			<li class="elmnt-one"><div class="skew"><div class="wrap"><img src="{% static 'myapp/img/iphone1.jpg' %}" width="1000" height="563"></div></div></li>
+			<li class="elmnt-two"><div class="skew"><div class="wrap"><img src="{% static 'myapp/img/redmi5pro.jpg' %}" width="1000" height="563"></div></div></li>
+			<li class="elmnt-three"><div class="skew"><div class="wrap"><img src="{% static 'myapp/img/Redmik20.png' %}" width="1000" height="563"></div></div></li>
+			<li class="elmnt-four"><div class="skew"><div class="wrap"><img src="{% static 'myapp/img/samsung1.jpg' %}" width="1000" height="563"></div></div></li>
+			<li class="elmnt-four"><div class="skew"><div class="wrap"><img src="{% static 'myapp/img/iphone2.jpg' %}" width="1000" height="563"></div></div></li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="captions" >
+	 <div class="focalPoint"><p><small><b>Iphone1<b></small></p></div>
+	 <div><p><small><b>Redmi Note 5 pro<b></small></p></div>
+	 <div><p><small><b>Redmi  K20<b></small></p></div>
+	 <div><p><small><b>Samsumg Note<b></small></p></div>
+	 <div><p><small><b>Iphone X <b></small></p></div>
+	</div>
+
+	<ul class="selectors">
+		<li class="focalPoint"><a href="">•</a></li><li><a href="">•</a></li><li><a href="">•</a></li><li><a href="">•</a></li>
+	</ul>
+
+	<button class="sldr-prv sldr-nav prev">Prev</button>
+	<button class="sldr-nxt sldr-nav next">Next</button>
+
+	
+	<p style="float:left;">&#8596;&nbsp;</p>
+	<p style="float:right;">&nbsp;&#8596;</p>
+
+	
+
+	<div class="clear"></div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+</div>
+
+<script src="{% static 'myapp/js/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'myapp/js/jquery.sldr.js' %}"></script>
+<script>
+
+$( window ).load( function() {
+
+	$( '.sldr' ).each( function() {
+		var th = $( this );
+		th.sldr({
+			focalClass    : 'focalPoint',
+			offset        : th.width() / 2,
+			sldrWidth     : 'responsive',
+			nextSlide     : th.nextAll( '.sldr-nav.next:first' ),
+			previousSlide : th.nextAll( '.sldr-nav.prev:first' ),
+			selectors     : th.nextAll( '.selectors:first' ).find( 'li' ),
+			toggle        : th.nextAll( '.captions:first' ).find( 'div' ),
+			sldrInit      : sliderInit,
+			sldrStart     : slideStart,
+			sldrComplete  : slideComplete,
+			sldrLoaded    : sliderLoaded,
+			sldrAuto      : true,
+			sldrTime      : 5000,
+			hasChange     : true
+		});
+	});
+
+});
+
+/**
+ * Sldr Callbacks
+ */
+
+/**
+ * When the sldr is initiated, before the DOM is manipulated
+ * @param {object} args the slides, callback, and config of the slider
+ * @return null
+ */
+function sliderInit( args ) {
+
+}
+
+/**
+ * When individual slides are loaded
+ * @param {object} args the slides, callback, and config of the slider
+ * @return null
+ */
+function slideLoaded( args ) {
+
+}
+
+/**
+ * When the full slider is loaded, after the DOM is manipulated
+ * @param {object} args the slides, callback, and config of the slider
+ * @return null
+ */
+function sliderLoaded( args ) {
+
+}
+
+/**
+ * Before the slides change focal points
+ * @param {object} args the slides, callback, and config of the slider
+ * @return null
+ */
+function slideStart( args ) {
+
+}
+
+/**
+ * After the slides are done changing focal points
+ * @param {object} args the slides, callback, and config of the slider
+ * @return null
+ */
+function slideComplete( args ) {
+
+}
+
+</script>
+</body>
+{% endblock %}
+</html>

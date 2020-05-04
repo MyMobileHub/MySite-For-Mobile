@@ -1,0 +1,31 @@
+{%extends 'myapp/header.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+		<div classs="row">
+		{% for s in samsungs %}
+		<div id="box" class="col-sm-4">
+			<div class="container">
+				<div class="card" style="width:250px">
+					<img class="card-img-top" src="{{s.image.url}}" alt="card image" width=250px height=250px>
+					<div class="card-body">
+						<h4 class="card-title"> <b>MODEL<b> :{{s.model}}</h4>
+						<p class="card-text"> <b>PRICE</b> :{{s.price}}</p>
+						<a href="{% url 'detail' pk=s.pk %}"><b>More Details</b></a>
+						<br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+	{% endblock %}
+
+</body>
+</html>
